@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(aa_my_pack_cpp)
+project(ab_topic_publisher_cpp)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -18,27 +18,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-
-add_executable(helloWorld src/helloWorld.cpp)
-ament_target_dependencies(helloWorld rclcpp)
-
-install(TARGETS
-  helloWorld
-  DESTINATION lib/${PROJECT_NAME}
-)
-
-install(DIRECTORY
-  launch
-  DESTINATION share/${PROJECT_NAME}
-
-)
-
-
-add_executable(helloWorldLoop src/helloWorldLoop.cpp)
-ament_target_dependencies(helloWorldLoop rclcpp)
-install(TARGETS helloWorldLoop DESTINATION lib/${PROJECT_NAME})
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
-
+find_package(std_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
