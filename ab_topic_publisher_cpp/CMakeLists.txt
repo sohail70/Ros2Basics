@@ -26,6 +26,12 @@ ament_target_dependencies(publisher rclcpp std_msgs)
 install(TARGETS publisher DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
+
+add_executable(oopublisher src/oopublisher.cpp)
+ament_target_dependencies(oopublisher rclcpp std_msgs)
+
+install(TARGETS oopublisher DESTINATION lib/${PROJECT_NAME})
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

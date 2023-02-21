@@ -37,7 +37,7 @@ install(DIRECTORY
 add_executable(helloWorldLoop src/helloWorldLoop.cpp)
 ament_target_dependencies(helloWorldLoop rclcpp)
 install(TARGETS helloWorldLoop DESTINATION lib/${PROJECT_NAME})
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+
 
 
 if(BUILD_TESTING)
