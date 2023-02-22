@@ -1,3 +1,7 @@
+'''
+In ROS2, each node should be responsible for a single module (e.g., one node for controlling wheel motors, one node for controlling a laser range-finder, etc.). Each node can communicate with other nodes
+through topics, resources, behavior, and parameters.
+'''
 import rclpy
 from rclpy.node import Node
 
