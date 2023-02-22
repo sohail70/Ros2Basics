@@ -2,7 +2,12 @@
 #include<std_msgs/msg/int32.hpp>
 #include<geometry_msgs/msg/twist.hpp>
 #include<chrono>
-
+/*  
+    Advantage of using timer instead a while loop:
+    With a timer, if your code takes longer than the timeout, it will still be called again anyway in a new thread. 
+    Using rate.sleep(), the next iteration will not start until the previous one has finished, 
+    and a warning will be issued saying the loop has missed its desired rate.
+*/
 using namespace std::chrono_literals;
 
 class Publisher: public rclcpp::Node
