@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'oopublisher = ab_topic_publisher_py.oopublisher:main'
         ],
     },
 )
