@@ -19,6 +19,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED) 
 
 add_executable(publisher  src/publisher.cpp)
 ament_target_dependencies(publisher rclcpp std_msgs)
@@ -28,7 +29,7 @@ install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
 
 add_executable(oopublisher src/oopublisher.cpp)
-ament_target_dependencies(oopublisher rclcpp std_msgs)
+ament_target_dependencies(oopublisher rclcpp std_msgs geometry_msgs)  #If you don't put geometry_msgs it will give colcon build error undefined reference to geomtery_msgs...
 
 install(TARGETS oopublisher DESTINATION lib/${PROJECT_NAME})
 
