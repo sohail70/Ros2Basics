@@ -8,6 +8,7 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=[package_name],
+    #The objective of this code is to install the launch files. this will install all the launch files from the launch/ folder, into ~/Ros2Basics/install/aa_my_pack_py/share/aa_my_pack_py/launch/
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -24,7 +25,8 @@ setup(
     #Add the node information to generate the executable. Actually you are adding an entry point to the helloWorld.py script
     entry_points={
         'console_scripts': [
-            'helloWorld = aa_my_pack_py.helloWorld:main' #helloWorld is the name of the executable  and main is the function and before main, helloWorld is the helloWorld.py which we ommit the .py extension
+            'helloWorld = aa_my_pack_py.helloWorld:main' ,  #helloWorld is the name of the executable  and main is the function and before main, helloWorld is the helloWorld.py which we ommit the .py extension
+            'helloWorldLoop = aa_my_pack_py.helloWorldLoop:main' #Don't forget to put a ',' before writing this line or else you node or launch file doesn't work!
         ],
     },
 )
