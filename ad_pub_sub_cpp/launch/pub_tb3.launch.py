@@ -1,3 +1,4 @@
+# Remember to run turtlebot3_gazebo empty_world.launch.py and add a wall to it and move the wall and play with it
 from launch import LaunchDescription
 import launch_ros.actions
 
