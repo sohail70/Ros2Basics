@@ -1,6 +1,9 @@
 import rclpy
+# import the ROS2 python libraries
 from rclpy.node import Node
+# import the Twist module from geometry_msgs interface
 from geometry_msgs.msg import Twist
+# import the LaserScan module from sensor_msgs interface
 from sensor_msgs.msg import LaserScan
 from rclpy.qos import ReliabilityPolicy , QoSProfile
 
@@ -30,7 +33,7 @@ class MoveTb3(Node):
                 msg.linear.x = 0.0
                 self.pub_.publish(msg)
 
-        # msg.linear.x = 
+       
 
 
 

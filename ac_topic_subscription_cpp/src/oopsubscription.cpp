@@ -10,7 +10,8 @@ class Subscription: public rclcpp::Node
         Subscription():Node("Subscription")
         {
             // Create a Subscriber object that will listen to the /counter topic and will call the 'topic_callback' function each time it reads something
-            sub_ = this->create_subscription<std_msgs::msg::Int32>("/counter",10, std::bind(&Subscription::IntCallback , this , std::placeholders::_1));
+            //10 is the subscription queue size. you can also create a qos_profile variable and create Qos object and pass it in instead of just one number!
+            sub_ = this->create_subscription<std_msgs::msg::Int32>("/counter",10, std::bind(&Subscription::IntCallback , this , std::placeholders::_1)); 
             sub2_ = this->create_subscription<geometry_msgs::msg::Twist>("/cmd_vel" , 10 , std::bind(&Subscription::TwistCallback , this , std::placeholders::_1));
             sub3_ = this->create_subscription<nav_msgs::msg::Odometry>("/odom" , 10 , std::bind(&Subscription::OdomCallback ,this , std::placeholders::_1 ));
         }
