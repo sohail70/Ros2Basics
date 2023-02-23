@@ -43,6 +43,8 @@ class CustomPub(Node):
         self.msg = Person()
         
         
+        
+        
 
     def TimerCallback(self):
         self.msg.age = 10.0
