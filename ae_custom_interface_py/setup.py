@@ -12,7 +12,9 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share' , package_name) , glob('launch/*.launch.py'))
+        (os.path.join('share' , package_name) , glob('launch/*.launch.py')),
+        # ('/home/course/Ros2Basics/install/ae_custom_interface_cpp/share/ament_index/resource_index/packages',
+        #     ['resource/' + 'ae_custom_interface_cpp'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
