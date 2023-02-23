@@ -19,8 +19,17 @@ class MoveTb3(Node):
         self.laserData = msg
 
     def timer_callback(self):
-        self.get_logger().info("ranges[0] , ranges[pi/2] , ranges [pi] , ranges[3pi/2] , [%s , %s , %s , %s]" %(str(self.laserData.ranges[0]) , str(self.laserData.ranges[360//4]) , str(self.laserData.ranges[360//2]) , str(self.laserData.ranges[270]))) 
-        # msg = Twist()
+        if len(self.laserData.ranges) != 0:
+            self.get_logger().info("ranges[0] , ranges[pi/2] , ranges [pi] , ranges[3pi/2] , [%s , %s , %s , %s]" %(str(self.laserData.ranges[0]) , str(self.laserData.ranges[360//4]) , str(self.laserData.ranges[360//2]) , str(self.laserData.ranges[270]))) 
+            msg = Twist()
+        
+            if self.laserData.ranges[0]>0.5 :
+                msg.linear.x = 0.1
+                self.pub_.publish(msg)
+            else:
+                msg.linear.x = 0.0
+                self.pub_.publish(msg)
+
         # msg.linear.x = 
 
 
