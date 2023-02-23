@@ -1,5 +1,6 @@
 from setuptools import setup
-
+import os
+from glob import glob
 package_name = 'ad_pub_sub_py'
 
 setup(
@@ -10,6 +11,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share' , package_name) , (glob('launch/*.launch.py')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,6 +22,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'pubsub = ad_pub_sub_py.pub_tb3:main'
         ],
     },
 )
