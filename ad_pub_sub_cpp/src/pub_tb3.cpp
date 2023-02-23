@@ -13,7 +13,6 @@ class MoveTb3: public rclcpp::Node
             pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel" , 10);
             sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>("/scan" , 10,std::bind(&MoveTb3::ScanCallback , this , std::placeholders::_1));
             timer_ = this->create_wall_timer(500ms , std::bind(&MoveTb3::TimerCallback , this));
-
         }
     private:
         void ScanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
@@ -36,9 +35,6 @@ class MoveTb3: public rclcpp::Node
                     vel.linear.x = 0.0;
                     pub_->publish(vel);
                 }
-            }
-            else{
-                RCLCPP_INFO(this->get_logger() , "Not ");
             }
         }
 
