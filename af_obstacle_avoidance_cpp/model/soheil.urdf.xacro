@@ -144,18 +144,68 @@
     </link>
 
 
-<!-- 
-    <link name="caster_back_left_link">
 
+    <link name="caster_back_left_link">
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.030 0.009 0.020"/>
+            </geometry>
+            <surface>
+            <contact>
+                <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+5</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0.001</min_depth>
+                </ode>
+            </contact>
+            </surface>
+        </collision>
+
+        <inertial>
+        <origin xyz="0 0 0" />
+        <mass value="0.005" />
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
     </link>
 
 
     <link name="caster_back_right_link">
+        <collision>
+            <origin xyz="0 0.001 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.030 0.009 0.020"/>
+            </geometry>
+            <surface>
+            <contact>
+                <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+5</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0.001</min_depth>
+                </ode>
+            </contact>
+            </surface>
+        </collision>
 
+        <inertial>
+        <origin xyz="0 0 0" />
+        <mass value="0.005" />
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                iyy="0.001" iyz="0.0"
+                izz="0.001" />
+        </inertial>
     </link>
 
 
-    <link name="camera_link"/>
+    <!-- <link name="camera_link"/>
 
     <link name="camera_rgb_optical_frame">
 
@@ -175,7 +225,7 @@
     <joint name="wheel_left_joint" type="revolute">
         <parent link="base_link"/>
         <child link="wheel_left_link"/>
-        <pose xyz="0 0 0.144" rpy="0.023 -1.57 0 0"/>
+        <origin xyz="0.0 0.144 0.023" rpy="-1.57 0 0"/>
         <axis xyz="0 0 1"/>
         <limit effort="100" velocity="5" lower="-3.14" upper="3.14"/>   
     </joint>
@@ -184,8 +234,19 @@
    <joint name="wheel_right_joint" type="revolute">
         <parent link="base_link"/>
         <child link="wheel_right_link"/>
-        <pose xyz="0 0 -0.144" rpy="0.023 -1.57 0 0"/>
+        <origin xyz="0.0 -0.144 0.023" rpy="-1.57 0 0"/>
         <axis xyz="0 0 1"/>
         <limit effort="100" velocity="5" lower="-3.14" upper="3.14"/>   
     </joint>
+
+   <joint name='caster_back_right_joint' type='fixed'>
+        <parent link="base_link"/>
+        <child link="caster_back_right_link"/>
+    </joint> 
+
+   <joint name='caster_back_left_joint' type='fixed'>
+        <parent link="base_link"/>
+        <child link="caster_back_left_link"/>
+    </joint> 
+
 </robot>
