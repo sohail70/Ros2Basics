@@ -99,7 +99,7 @@
         </visual>
 
         <collision>
-        <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+        <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
         <geometry>
             <cylinder length="0.0315" radius="0.055"/>
         </geometry>
@@ -365,11 +365,11 @@
         <axis xyz="0 0 1"/>
     </joint>
 
-    <!-- <joint name="lidar_joint" type="fixed">
+    <joint name="lidar_joint" type="fixed">
         <parent link="base_link"/>
         <child link="base_scan"/>
         <origin xyz="-0.064 0 0.121" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-    </joint> -->
+    </joint>
 
 </robot>
