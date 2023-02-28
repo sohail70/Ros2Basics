@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find-pkg-share af_obstacle_avoidance_cpp)/launch/robot_state_publisher.launch.py"/>
+    <include file="$(find-pkg-share af_obstacle_avoidance_cpp)/launch/c_tb3_sdf.launch.py"/>
+</launch>
