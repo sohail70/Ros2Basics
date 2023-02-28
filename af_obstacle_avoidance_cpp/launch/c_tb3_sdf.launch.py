@@ -20,7 +20,7 @@ def generate_launch_description():
 
     ############################## PUBLISH THE URDF FILE #################################
     # sdf_file  = os.path.join(get_package_share_directory("af_obstacle_avoidance_cpp") , "model" , "robot.urdf")
-    robot_desc_path  = os.path.join(get_package_share_directory("af_obstacle_avoidance_cpp") , "model" , "turtlebot3_waffle_pi.urdf")
+    robot_desc_path  = os.path.join(get_package_share_directory("af_obstacle_avoidance_cpp") , "model" , "soheil.urdf.xacro")
     
     # sdf_model = LaunchConfiguration('sdf_model') 
     # declare_sdf_model_path_cmd = DeclareLaunchArgument(
