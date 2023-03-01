@@ -193,31 +193,32 @@
 
 
 
-    <joint name="wheel_left_joint" type="revolute">
+    <joint name="wheel_left_joint" type="continuous">
         <parent link="base_link"/>
         <child link="wheel_left_link"/>
         <origin xyz="0.0 0.144 0.023" rpy="-1.57 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit effort="100" velocity="5" lower="-3.14" upper="3.14"/>   
     </joint>
 
 
-   <joint name="wheel_right_joint" type="revolute">
+   <joint name="wheel_right_joint" type="continuous">
         <parent link="base_link"/>
         <child link="wheel_right_link"/>
         <origin xyz="0.0 -0.144 0.023" rpy="-1.57 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit effort="100" velocity="5" lower="-3.14" upper="3.14"/>   
     </joint>
 
    <joint name='caster_back_right_joint' type='fixed'>
         <parent link="base_link"/>
         <child link="caster_back_right_link"/>
+        <origin xyz="-0.177 -0.064 -0.004" rpy="-1.57 0 0"/>
+
     </joint> 
 
    <joint name='caster_back_left_joint' type='fixed'>
         <parent link="base_link"/>
         <child link="caster_back_left_link"/>
+        <origin xyz="-0.177 0.064 -0.004" rpy="-1.57 0 0"/>
     </joint> 
 
 
@@ -255,7 +256,7 @@
             <wheel_diameter>0.066</wheel_diameter>
 
             <!-- limits -->
-            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_torque>10</max_wheel_torque>
             <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
             <command_topic>cmd_vel</command_topic>
@@ -292,46 +293,46 @@
   </gazebo>
 
   <gazebo reference="wheel_left_link">
-    <mu1>100000</mu1>
-    <mu2>100000</mu2>
-    <kp>100000.0</kp>
-    <kd>1.0</kd>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
     <minDepth>0.001</minDepth>
     <maxVel>0.1</maxVel>
-    <fdir1>0 0 0</fdir1>
+    <fdir1>1 0 0</fdir1>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
 
   <gazebo reference="wheel_right_link">
-    <mu1>100000</mu1>
-    <mu2>100000</mu2>
-    <kp>100000.0</kp>
-    <kd>1.0</kd>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
     <minDepth>0.001</minDepth>
     <maxVel>0.1</maxVel>
-    <fdir1>0 0 0</fdir1>
+    <fdir1>1 0 0</fdir1>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
 
 
   <gazebo reference="caster_back_right_link">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <kp>100000.0</kp>
-    <kd>1.0</kd>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
     <minDepth>0.001</minDepth>
-    <maxVel>0.01</maxVel>
-    <material>Gazebo/White</material>
+    <maxVel>1.0</maxVel>
+    <material>Gazebo/FlatBlack</material>
   </gazebo>
 
   <gazebo reference="caster_back_left_link">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <kp>100000.0</kp>
-    <kd>1.0</kd>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
     <minDepth>0.001</minDepth>
-    <maxVel>0.01</maxVel>
-    <material>Gazebo/White</material>
+    <maxVel>1.0</maxVel>
+    <material>Gazebo/FlatBlack</material>
   </gazebo>
 
  
