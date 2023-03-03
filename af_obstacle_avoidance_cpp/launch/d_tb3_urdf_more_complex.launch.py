@@ -20,8 +20,8 @@ def generate_launch_description():
   package_name = 'af_obstacle_avoidance_cpp'
   robot_name_in_model = 'tb3'
 #   rviz_config_file_path = 'rviz/urdf_gazebo_config.rviz'
-  urdf_file_path = 'model/turtlebot3_waffle_pi.urdf'
-  world_file_path = 'worlds/neighborhood.world'
+  urdf_file_path = 'model/my_tb3.urdf.xacro'
+  world_file_path = 'worlds/wall.world.xml'
      
   # Pose where we want to spawn the robot
   spawn_x_val = '0.0'
