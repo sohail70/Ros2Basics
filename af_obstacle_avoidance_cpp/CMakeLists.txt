@@ -23,6 +23,10 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 
+add_executable(avoidance src/avoidance.cpp)
+ament_target_dependencies(avoidance rclcpp std_msgs geometry_msgs sensor_msgs)
+
+install(TARGETS avoidance DESTINATION lib/${PROJECT_NAME} )
 install(DIRECTORY launch model worlds DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
