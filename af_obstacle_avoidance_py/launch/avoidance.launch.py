@@ -24,10 +24,11 @@ def generate_launch_description():
 
 
     ## My nodes
-
+    avoidance = Node(package="af_obstacle_avoidance_py" , executable="avoidance" , name="avoidance" , output="screen")
 
     ld = LaunchDescription()
     ld.add_action(args)
     ld.add_action(gazebo)
+    ld.add_action(avoidance)
 
     return ld

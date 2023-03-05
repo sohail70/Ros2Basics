@@ -24,7 +24,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'Avoidance = af_obstacle_avoidance_py.avoidance.py:main'
+            'avoidance = af_obstacle_avoidance_py.avoidance:main'
         ],
     },
 )

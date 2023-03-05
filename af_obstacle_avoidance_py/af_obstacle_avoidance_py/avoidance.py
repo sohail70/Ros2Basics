@@ -1,5 +1,5 @@
 import rclpy
-from rclpy import Node
+from rclpy.node import Node
 
 
 
@@ -7,8 +7,7 @@ from rclpy import Node
 class Avoidance(Node):
     def __init__(self):
         super().__init__("Avoidance_node")
-        Node.get_logger().info("Salam")
-
+        self.get_logger().error("HELLO")
 
 
 
