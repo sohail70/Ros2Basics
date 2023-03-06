@@ -23,9 +23,14 @@ find_package(std_srvs REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 
 add_executable(server src/empty_service_server.cpp)
+add_executable(client src/empty_service_client.cpp)
+
 ament_target_dependencies(server rclcpp std_msgs std_srvs gazebo_msgs)
+ament_target_dependencies(client rclcpp std_msgs std_srvs gazebo_msgs)
+
 
 install(TARGETS server DESTINATION lib/${PROJECT_NAME})
+install(TARGETS client DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY launch model worlds DESTINATION share/${PROJECT_NAME})
 
 
