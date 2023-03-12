@@ -1,0 +1,4 @@
+float64 distance # Side distance of the square
+int32 repititions # How many reps
+---
+bool success
