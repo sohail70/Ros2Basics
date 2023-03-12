@@ -3,6 +3,8 @@
 ros2 run --prefix 'gdbserver localhost:3000' af_obstacle_avoidance_cpp avoidance  --> use this to create a gdbserver 
 and then use the play button in the debugger section after you created the launch.json for vs code
 */
+// colcon build --packages-select <pkg_name> --cmake-args -DCMAKE_BUILD_TYPE=Debug
+
 #include<rclcpp/rclcpp.hpp>
 #include<geometry_msgs/msg/twist.hpp>
 #include<sensor_msgs/msg/laser_scan.hpp>
