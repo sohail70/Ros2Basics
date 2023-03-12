@@ -46,7 +46,7 @@ class SquareClient: public rclcpp::Node
             }
 
             auto future_result = square_client_->async_send_request(req);
-            
+            // spin until you get the result from the service server and then go back to the main thread 
             if (rclcpp::spin_until_future_complete(shared_from_this(), future_result) != rclcpp::executor::FutureReturnCode::SUCCESS) // notice that the first arg needs a node sharedPtr so I coudln't use "this" and had to use shared_from_this() to get a shared pointer out of "this"
             {
                 RCLCPP_INFO(this->get_logger() , "Service call failed");
