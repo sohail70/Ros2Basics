@@ -27,12 +27,12 @@ class Subscription: public rclcpp::Node
 
         void TwistCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
         {
-            RCLCPP_INFO(this->get_logger() , "linear_x:'%f' " , msg->linear.x , " angular_z:'%f' ",msg->angular.z );
+            RCLCPP_INFO(this->get_logger() , "linear_x: %f  , angular_z: %f ", msg->linear.x ,msg->angular.z );
         }
 
         void OdomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
         {
-            RCLCPP_INFO(this->get_logger() , "x: '%f'" , msg->pose.pose.position.x , "y: '%f'" , msg->pose.pose.position.y , "z: '%f'" , msg->pose.pose.position.z);
+            RCLCPP_INFO(this->get_logger() , "x: %f ,y: %f ,z: %f", msg->pose.pose.position.x , msg->pose.pose.position.y , msg->pose.pose.position.z);
         }
 
         rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr sub_;

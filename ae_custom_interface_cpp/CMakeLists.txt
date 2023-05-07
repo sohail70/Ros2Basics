@@ -26,7 +26,12 @@ rosidl_generate_interfaces(${PROJECT_NAME} "msg/Person.msg")
 # To be able to use custom msg
 find_package(ae_custom_interface_cpp REQUIRED) # This is the package that contains the custom interface (Which is this package! weirdly!)
 add_executable(person_publisher  src/person_publisher.cpp)
-ament_target_dependencies(person_publisher rclcpp std_msgs ae_custom_interface_cpp) # Note that we are also adding the package which contains the custom interface
+ament_target_dependencies(person_publisher rclcpp std_msgs ae_custom_interface_cpp) # Note that we are also adding the package which contains the custom interface --> It works but this is not the standard way, you should use rosidl_target_interfaces --> https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Single-Package-Define-And-Use-Interface.html#create-a-msg-file
+
+## This is the right approach instead of find_package(ae_cu..) and putting ae_cu.. in the ament_target_dependnecies
+# rosidl_target_interfaces(person_publisher
+#   ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
 
 install(TARGETS person_publisher DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
